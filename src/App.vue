@@ -2,8 +2,8 @@
   <v-app>
     <v-app-bar app color="primary" dark>
     </v-app-bar>
-
     <v-main>
+      <p>Number of images: {{ numberOfImages }}</p>
       <ImageGrid />
     </v-main>
   </v-app>
@@ -22,12 +22,13 @@ export default {
   mounted: function() { 
     axios.post("https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=d7f66852aed44008ce15c75baaed617a&format=json&nojsoncallback=1")
     .then(response => { 
-      console.log(response.data);
+      this.numberOfImages = response.data.photos.photo.length;
     })
   },
 
   data: () => ({
     //
+    numberOfImages: 0
   })
 };
 </script>
