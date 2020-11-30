@@ -1,9 +1,10 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
+            <h3>Number of images: {{ numberOfImages }}</h3>
     </v-app-bar>
     <v-main>
-      <p>Number of images: {{ numberOfImages }}</p>
+      <v-container container>
       
         <ImageSquare     
           v-for="imgObj in images" 
@@ -14,6 +15,7 @@
           :secret="imgObj.secret" 
           :title="imgObj.title" 
         />
+        </v-container>
     </v-main>
   </v-app>
 </template>
@@ -29,7 +31,7 @@ export default {
     ImageSquare
   },
   mounted: function() { 
-    axios.post("https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=d7f66852aed44008ce15c75baaed617a&format=json&nojsoncallback=1")
+    axios.post("https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=" + process.env.VUE_APP_FLICKR_KEY + "&format=json&nojsoncallback=1")
     .then(response => {
       console.log(response.data); 
       this.numberOfImages = response.data.photos.photo.length;
