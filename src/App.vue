@@ -7,17 +7,19 @@
     </v-app-bar>
     <v-main>
       <v-container container>
-      
-        <ImageSquare     
-          v-for="imgObj in images" 
-          :key="imgObj.id"
-          :farm="imgObj.farm" 
-          :server="imgObj.server"
-          :id="imgObj.id"
-          :secret="imgObj.secret" 
-          :title="imgObj.title" 
-        />
-        </v-container>
+        <v-row>
+          <v-col v-for="(imgObj, index) in images" :key="index" >
+            <ImageSquare     
+              :key="imgObj.id"
+              :farm="imgObj.farm" 
+              :server="imgObj.server"
+              :id="imgObj.id"
+              :secret="imgObj.secret" 
+              :title="imgObj.title" 
+            />
+        </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
