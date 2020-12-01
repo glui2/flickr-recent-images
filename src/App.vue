@@ -51,7 +51,6 @@ export default {
     searchRecent: function() {
       axios.post("https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=" + process.env.VUE_APP_FLICKR_KEY + "&format=json&nojsoncallback=1")
       .then(response => {
-        // console.log(response.data); 
         this.numberOfImages = response.data.photos.photo.length;
         this.images = response.data.photos.photo;
       })
@@ -59,7 +58,6 @@ export default {
     searchInput: debounce(function (stringInput) {
       axios.post("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + process.env.VUE_APP_FLICKR_KEY + "&text=" + stringInput + "&format=json&nojsoncallback=1")
       .then(response => {
-        console.log(response.data); 
         this.numberOfImages = response.data.photos.photo.length;
         this.images = response.data.photos.photo;
       })}, 500)
