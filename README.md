@@ -32,7 +32,7 @@ When the user enters in some text in the text field at the top of the page, upon
 ## Project setup
 
 ### Dependency setup
-First, install the required packages using:
+After cloning the repository, first install the required packages using:
 ```
 npm install
 ```
@@ -86,4 +86,8 @@ Moving forward, the following features still need to be implemented:
     - append an `<img>` element with the same img src to `<body>` with class that displays at original resolution/aspect ratio, and has highest Z-index so that it displays above all other images
     - create a close button should also be generated and appended to `<body>` that destroys the `<img>` element and the close button itself, removing it from the DOM, and re-enables scrolling.
     
-
+- Form validation 
+  - depending on future additional features, some input validation and sanitation maybe required 
+  
+ - State management 
+  - As the application increases in complexity, a state manager such as VueX maybe required, but for the purpose of this exercise it was not required as there were not many states that needed to be managed.
