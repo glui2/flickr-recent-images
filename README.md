@@ -26,7 +26,10 @@ When the user enters in some text in the text field at the top of the page, upon
   - package that makes it easy to implement debouncing in Vue
   
 - Axios
-  - Used for making API calls as it is easy to implement using JavaScript 
+  - Used for making API calls as it is easy to implement using JavaScript
+  
+- Dotenv
+  - Used to store constants and API credentials for the project environment
 
 
 ## Project setup
@@ -87,7 +90,15 @@ Moving forward, the following features still need to be implemented:
     - create a close button should also be generated and appended to `<body>` that destroys the `<img>` element and the close button itself, removing it from the DOM, and re-enables scrolling.
     
 - Form validation 
-  - depending on future additional features, some input validation and sanitation maybe required 
+  - depending on future additional features, some input validation and sanitation may be required 
   
- - State management 
+- State management 
   - As the application increases in complexity, a state manager such as VueX maybe required, but for the purpose of this exercise it was not required as there were not many states that needed to be managed.
+  
+- Responsive Design
+  - The focus of this project was primarily to demonstrate functionality, but in future as the application is developed the responsiveness will need to be considered for various devices.
+  
+- Error handling
+  - A catch function needs to be added to the axios API calls, in order to handle situations where error codes are returned (eg if the Flickr server isn't reachable)
+  
+ 
