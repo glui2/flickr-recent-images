@@ -45,12 +45,12 @@ yarn install
 
 ### API Key setup 
 
-Create a `.env` file in the root of the project folder, and input your Flickr API keys as follows:
+To obtain an API key follow the steps as outlined here: https://www.flickr.com/services/api/misc.api_keys.html
+Create a `.env` file in the root of the project folder, and input your Flickr API key and secret as follows:
 ```
 VUE_APP_FLICKR_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 VUE_APP_FLICKR_SECRET=xxxxxxxxxxxx
 ```
-
 
 ### Compiles and hot-reloads for development
 Run the application on a local server using:
@@ -75,12 +75,9 @@ Moving forward, the following features still need to be implemented:
   - Test the `searchRecent` method 
   - Test the `searchInput` method
   - Test that the number of images displayed on screen matches the number of image objects returned from a mock API
-  
 
 - Integration tests
   - Test that typing something into the input will display a number of images equal to the number of image objects returned from a mock API
-
-- OAuth with the Flickr API 
 
 - Display a higher resolution image 
   - Create an onClick method  eg onImageClick() 
