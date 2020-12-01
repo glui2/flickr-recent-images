@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="300" >
+  <v-card width="300" >
     <v-img :src="imgSrc"></v-img>
     <v-card-title v-text="imgTitle"></v-card-title>
   </v-card>
